@@ -63,6 +63,7 @@ nav .nav_center_btn a {
     padding-left: 3px;
     font-size: 0.9rem;
     font-weight: 400;
+    background-color: #f0f0f0;
     color: #666666;
 }
 .mynav_right .search input[type="search"]:focus {
