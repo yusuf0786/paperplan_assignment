@@ -6,13 +6,13 @@ $( function(){
     })
 
     // items hover function
-    let items = document.querySelectorAll(".items")
+    let boxs = document.querySelectorAll(".boxs")
     
-    for(let i = 0; i <= items.length-1; i++){
-        $($(".items")[i]).mouseover( function(){
+    for(let i = 0; i <= boxs.length-1; i++){
+        $($(".boxs")[i]).mouseover( function(){
             $($(".other_btns")[i]).addClass("other_btns_anim")
         })
-        $($(".items")[i]).mouseout( function(){
+        $($(".boxs")[i]).mouseout( function(){
             $($(".other_btns")[i]).removeClass("other_btns_anim")
         })
     }
