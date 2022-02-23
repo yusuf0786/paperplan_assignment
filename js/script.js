@@ -1,9 +1,11 @@
 $( function(){
 
+    // navigation toggle
     $("#mynav_toggle").click( function(){
         $(".mynav_right").slideToggle()
     })
 
+    // items hover function
     let items = document.querySelectorAll(".items")
     
     for(let i = 0; i <= items.length-1; i++){

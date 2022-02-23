@@ -16,11 +16,9 @@ html {
 header {
     width: 100%;
 }
-
 header nav {
     padding: 10px;
 }
-
 nav ul {
     display: flex;
 }
@@ -97,7 +95,7 @@ nav > button {
     color: #666666;
 }
 
-/* sec1 */
+/* section1 starts */
 .sec1 {
     width: 100%;
     padding-top: 30px;
@@ -157,12 +155,14 @@ nav > button {
 .sec1_links a span {
     font-weight: bold;
 }
+/* section1 ends */
 
 /* main */
 main {
     padding: 10px;
     padding-top: 20px;
 }
+/* breadcrums sections starts */
 .main_breadcrums {
     width: 100%;
     margin-bottom: 20px;
@@ -182,7 +182,9 @@ main {
     text-decoration: none;
     color: inherit;
 }
+/* breadcrums sections ends */
 
+/* items sections starts */
 .items_container {
     width: 100%;
 }
@@ -256,6 +258,7 @@ main {
     color: #666666;
     margin-left: 8px;
 }
+/* items sections ends */
 
 /* other classes */
 .common_container {
@@ -298,6 +301,7 @@ main {
     }
 }
 
+/* media quaries */
 @media only screen and (max-width:1025px) {
     .items {
         width: 300px;
