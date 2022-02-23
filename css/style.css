@@ -18,8 +18,6 @@ header {
 }
 
 header nav {
-    max-width: 1200px;
-    margin: 0 auto;
     padding: 10px;
 }
 
@@ -31,12 +29,15 @@ nav ul li {
     margin-right: 20px;
     color: #666666;
 }
+nav > ul li:hover {
+    color: #000;
+}
 nav ul li a {
     color: inherit;
     text-decoration: none;
 }
 nav .nav_center_btn {
-    color: rgb(0, 190, 130, 1);
+    color: rgba(0, 190, 130, 1);
 }
 nav .nav_center_btn a {
     text-decoration: none;
@@ -55,7 +56,7 @@ nav .nav_center_btn a {
 .mynav_right .search button {
     border: 0;
     color: #666666;
-    margin-right: 5px;
+    margin: 0 5px;
 }
 .mynav_right .search input[type="search"] {
     width: 150px;
@@ -99,7 +100,7 @@ nav > button {
 /* sec1 */
 .sec1 {
     width: 100%;
-    padding: 20px 0;
+    padding-top: 30px;
     background-color: rgba(0, 255, 255, 0.3);
     color: #666666;
 }
@@ -109,15 +110,49 @@ nav > button {
     font-size: 2rem;
     font-weight: 100;
 }
+.sec1 .close_btn {
+    width: 19px;
+    height: 18px;
+    font-size: 3rem;
+    font-weight: 100;
+    color: #666666;
+    position: absolute;
+    top: 8px;
+    right: 120px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.close_btn span {
+    width: 19px;
+    height: 18px;
+    position: absolute;
+    top: -17px;
+    right: 4px;
+}
 .sec1 .sec1_links {
-    max-width: 1200px;
-    margin: 0 auto;
     font-size: 1rem;
-    justify-content: space-around;
+    padding: 0 80px;
+    display: flex;
 }
 .sec1_links a {
+    display: inline-block;
+    width: 100%;
+    border: 1px solid #666666;
+    border-bottom: 0;
+    padding: 15px;
     text-decoration: none;
     color: inherit;
+    text-align: center;
+}
+.sec1_links a:nth-child(1) {
+    border-left: 0;
+}
+.sec1_links a:nth-child(2) {
+    border-left: 0;
+}
+.sec1_links a:nth-child(3) {
+    border-left: 0;
+    border-right: 0;
 }
 .sec1_links a span {
     font-weight: bold;
@@ -125,32 +160,33 @@ nav > button {
 
 /* main */
 main {
-    max-width: 1200px;
-    margin: 0 auto;
     padding: 10px;
     padding-top: 20px;
 }
-.product_category_links {
+.main_breadcrums {
     width: 100%;
     margin-bottom: 20px;
 }
-.product_category_links ul {
+.main_breadcrums ul {
     display: flex;
 }
-.product_category_links ul li {
+.main_breadcrums ul li {
     list-style-type: none;
     margin-right: 15px;
     color: #666666;
 }
-.product_category_links ul li a {
+.main_breadcrums ul li:hover {
+    color: #000;
+}
+.main_breadcrums ul li a {
     text-decoration: none;
     color: inherit;
 }
 
-.products_container {
+.items_container {
     width: 100%;
 }
-.products {
+.items {
     width: 330px;
     height: 380px;
     margin-bottom: 50px;
@@ -159,14 +195,12 @@ main {
     flex-flow: column nowrap;
     justify-content: space-between;
 }
-.products .top {
+.items .top {
     display: flex;
-    justify-content: flex-end;
-}
-.products:nth-child(2) .top {
     justify-content: space-between;
 }
 .top .other_btns {
+    opacity: 0;
     color: rgba(0, 190, 130, 1);
     padding: 10px;
 }
@@ -180,7 +214,7 @@ main {
     background-color: rgba(0, 190, 130, 1);
     color: #fff;
 }
-.products .middle {
+.items .middle {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -189,10 +223,10 @@ main {
 .middle img {
     width: 58%;
 }
-.products:nth-child(3) .middle img {
+.items:nth-child(3) .middle img {
     transform: scaleX(-1);
 }
-.products .bottom {
+.items .bottom {
     width: 100%;
     padding: 10px;
 }
@@ -200,17 +234,21 @@ main {
     display: flex;
     align-items: center;
 }
-.review img {
+.review .review_img {
     width: 10%;
     border: 2px solid #fff;
     border-radius: 100%;
     z-index: 10;
 }
-.review img:nth-child(2) {
+.review_img img {
+    width: 100%;
+    border-radius: 100%;
+}
+.review .review_img:nth-child(2) {
     margin-left: -5px;
     z-index: 9;
 }
-.review img:nth-child(3) {
+.review .review_img:nth-child(3) {
     margin-left: -5px;
     z-index: 8;
 }
@@ -220,7 +258,12 @@ main {
 }
 
 /* other classes */
-.flex_h {
+.common_container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.flex_row {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -231,8 +274,32 @@ main {
     color: #000 !important;
 }
 
+/* animations */
+.other_btns_anim {
+    animation-name: other_btns_anim;
+    -webkit-animation-name: other_btns_anim;
+    animation-duration: 0.5s;
+    -webkit-animation-duration: 0.5s;
+    animation-delay: 0;
+    -webkit-animation-delay: 0;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+}
+@keyframes other_btns_anim {
+    0% {
+        opacity: 0;
+        transform: translate(0, -10px);
+        -webkit-transform: translate(0, -10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 0);
+        -webkit-transform: translate(0, 0);
+    }
+}
+
 @media only screen and (max-width:1025px) {
-    .products {
+    .items {
         width: 300px;
         height: 350px;
     }
@@ -269,25 +336,51 @@ main {
         width: 100%;
     }
     .mynav_right .search input[type="search"] {
-        width: 90%;
+        width: 85%;
     }
 
-    .products_container {
+    .items_container {
         justify-content: space-evenly;
     }
-    .products {
-        margin-bottom: 68px;
+    .items {
+        margin-bottom: 58px;
     }
 }
 
 @media only screen and (max-width:426px) {
-    .products_container {
+    .items_container {
         justify-content: center;
     }
-    .products {
+    .items {
         width: 330px;
         height: 380px;
         margin-bottom: 50px;
+    }
+
+    .sec1 h1 {
+        margin: 5px 0 20px 0;
+        font-size: 1.5rem;
+    }
+    .sec1 .close_btn {
+        font-size: 2.5rem;
+        top: -10px;
+        right: 20px;
+    }
+    .sec1 .sec1_links {
+        flex-flow: column nowrap;
+    }
+    .sec1_links a:nth-child(1) {
+        border-right: 0;
+    }
+    .sec1_links a:nth-child(2) {
+        border-right: 0;
+    }
+    
+    nav .nav_center_btn {
+        order: 1;
+    }
+    nav > ul {
+        order: 2;
     }
 }
 
@@ -296,17 +389,6 @@ main {
         font-size: 0.9rem;
     }
     .mynav_right .search input[type="search"] {
-        width: 83%;
-    }
-
-    .sec1 h1 {
-        margin: 5px 0 20px 0;
-        font-size: 1.5rem;
-    }
-    .sec1 .sec1_links {
-        flex-flow: column nowrap;
-    }
-    .sec1_links a {
-        margin-bottom: 10px;
+        width: 80%;
     }
 }
