@@ -109,8 +109,8 @@ nav > button {
     font-weight: 100;
 }
 .sec1 .close_btn {
-    width: 19px;
-    height: 18px;
+    width: 23px;
+    height: 23px;
     font-size: 3rem;
     font-weight: 100;
     color: #666666;
@@ -121,11 +121,11 @@ nav > button {
     overflow: hidden;
 }
 .close_btn span {
-    width: 19px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     position: absolute;
-    top: -17px;
-    right: 4px;
+    top: -15px;
+    right: 5px;
 }
 .sec1 .sec1_links {
     font-size: 1rem;
